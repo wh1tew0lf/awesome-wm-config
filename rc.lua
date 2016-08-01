@@ -92,6 +92,7 @@ end
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
+   { "log out", '~/.config/awesome/bashScripts/shutdownDialog.sh'},
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }

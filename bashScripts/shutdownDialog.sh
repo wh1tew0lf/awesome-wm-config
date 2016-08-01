@@ -5,16 +5,18 @@ ACTION=`zenity --width=90 --height=200 --list --text="Select logout action" --ti
 if [ -n "${ACTION}" ];then
   case $ACTION in
   Shutdown)
-    zenity --question --text "Are you sure you want to halt?" && gksudo halt
+    zenity --question --text "Are you sure you want to halt?" &&
+	gksudo "shutdown -P 0"
     ## or via ConsoleKit
-    # dbus-send --system --dest=org.freedesktop.ConsoleKit.Manager \
-    # /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop
+    #dbus-send --system --dest=org.freedesktop.ConsoleKit.Manager \
+    #/org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop
     ;;
   Reboot)
-    zenity --question --text "Are you sure you want to reboot?" && gksudo reboot
+    zenity --question --text "Are you sure you want to reboot?" &&
+	gksudo reboot
     ## Or via ConsoleKit
-    # dbus-send --system --dest=org.freedesktop.ConsoleKit.Manager \
-    # /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
+    #dbus-send --system --dest=org.freedesktop.ConsoleKit.Manager \
+    #/org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
     ;;
   LockScreen)
     slock

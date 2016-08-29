@@ -100,9 +100,10 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "Debian", debian.menu.Debian_menu.Debian },
                                     { "open terminal", terminal },
                                     { "chromium", "chromium-browser" },
+                                    { "firefox", "firefox" },
                                     { "thunderbird", "thunderbird" },
-                                    { "skype1", "/home/wh1/skype1" },
-                                    { "skype2", "/home/wh1/skype2" },
+                                    { "skypeD", "/home/wh1/skype1" },
+                                    { "skypeA", "/home/wh1/skype2" },
                                     { "KeePassX", "/home/wh1/Scripts/KeePass2.sh" },
                                     { "emacs", "emacs" },
                                     { "thunar", "thunar" }

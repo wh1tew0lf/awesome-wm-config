@@ -83,13 +83,14 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[11])
 end
 -- }}}
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
 myawesomemenu = {
+   { "open terminal", terminal },
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
@@ -100,9 +101,11 @@ myawesomemenu = {
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "Debian", debian.menu.Debian_menu.Debian },
                                     { "open terminal", terminal },
+                                    { "QupZilla", "qupzilla" },
                                     { "chromium", "chromium-browser" },
                                     { "firefox", "firefox" },
                                     { "thunderbird", "thunderbird" },
+                                    { "skype", "skype" },
                                     { "skypeD", "/home/wh1/skype1" },
                                     { "skypeA", "/home/wh1/skype2" },
                                     { "KeePassX", "/home/wh1/Scripts/KeePass2.sh" },

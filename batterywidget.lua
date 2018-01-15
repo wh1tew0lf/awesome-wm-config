@@ -33,8 +33,12 @@ function update_battery(widget)
 
    local ir = math.floor((100 - percentage) * (er - sr) / 100 + sr)
    local ig = math.floor(percentage * (eg - sg) / 100 + sg)
+   local text_colour = "black"
+   if ir > ig then
+	  text_colour = "white"
+   end
    local interpol_colour = string.format("%.2x%.2x%.2x", ir, ig, 0x00)
-   local text = " <span color='blue' background='#" .. interpol_colour .. "'> " .. percentage .. "%" .. icon .. " </span> "
+   local text = " <span color='" .. text_colour .. "' background='#" .. interpol_colour .. "'> " .. percentage .. "%" .. icon .. " </span> "
    widget.text = text
 end
 

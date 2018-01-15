@@ -21,7 +21,7 @@ function update_volume(widget)
    local ib = math.floor(volume * (eb - sb) / 100 + sb)
    interpol_colour = string.format("%.2x%.2x%.2x", ir, ig, ib)
    if string.find(status, "on", 1, true) then
-	  volume = " <span color='blue' background='#" .. interpol_colour .. "'>" .. volume .. "%</span> "
+	  volume = " <span color='black' background='#" .. interpol_colour .. "'>" .. volume .. "%</span> "
    else
 	  volume = " <span color='red' background='#" .. interpol_colour .. "'> M </span> "
    end
